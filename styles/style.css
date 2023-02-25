@@ -1,0 +1,236 @@
+body{
+	background:rgb(0, 0, 0);
+}
+.contenair{
+	position: absolute;
+	top: 10%;
+	left: 50%;
+	border: 1px solid rgb(17, 6, 77);
+	/* background: rgba(245, 245, 245, 0.192); */
+	border-radius: 10px;
+	transform: translate(-50%);
+	width: 250px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	height: 400px;
+	box-shadow: 0px 0px 4px 4px rgb(23, 4, 27);
+}
+.bi-discord{
+	color: greenyellow;
+	font-size: x-large;
+	text-shadow: 1px 1px 4px greenyellow;
+}
+.bi-music-note-list{
+	position: absolute;
+	color: red;
+	font-size: xx-large;
+	margin-left: 50px;
+	perspective: 20px;
+	animation: mov 2s ease-in-out infinite;
+}
+
+@keyframes mov{
+	0%,100%{
+		color: rgb(255, 0, 221);
+		transform: translateZ(0px);
+	}50%{
+		color: greenyellow;
+		transform: translateZ(71px) translateX(20px) translateY(-20px) rotate(-40deg);
+	}
+}
+.title{
+	position: absolute;
+	top: 7%;
+	left: 10%;
+	text-align: center;
+	width: 340px;
+	border-top: none;
+	border-left: none;
+	transition: .7s;
+}
+.title::before{
+content: '';
+position: absolute;
+display: block;
+border-radius: 10px;
+width: 340px;
+animation: BorderDr .5s ease-out infinite;
+height: 100%;
+border:0px 0px 4px 4px rgb(255, 0, 255);
+}
+@keyframes BorderDr {
+	0%,100%{
+		border: 1px solid rgb(0, 17, 255);
+		transition: .7s;
+		border-top: none;
+		border-left: none;
+	}
+	25%{
+		transition: .7s;
+		border: 1px solid rgb(0, 255, 64);
+		border-top: none;
+		border-right: none;
+	}
+	50%{
+		transition: .7s;
+		border: 1px solid rgb(255, 102, 0);
+		border-bottom: none;
+		border-right: none;
+	}
+	75%{
+		border: 1px solid rgb(255, 0, 0);
+		transition: .7s;
+		border-left: none;
+		border-bottom: none;
+	}
+}
+
+h3{
+	color: whitesmoke;
+}
+h4{
+	color: greenyellow;
+}
+.song{
+	display: flex;
+	justify-content: space-around;
+	height: 40px;
+	width: 100%;
+	border: 1px solid rgb(131, 10, 179);
+	background:rgba(37, 102, 163, 0.432);
+}
+.song:hover{
+	background:rgba(131, 175, 216, 0.432);
+}
+.btn{
+	background: darkblue;
+	width: 70px;
+	height: 40px;
+	color: white;
+	position: absolute;
+	left: 25%;
+	top: 5%;
+}
+.song-title{
+	color: rgb(255, 255, 255);
+	font-family: 'script';
+	margin-top: 5px;
+	font-size: .9em;
+}
+.song-control-play{
+	position: absolute;
+	right: 10px;
+	margin-top: 10px;
+	border-radius: 50%;
+	width: 25px;
+	height:25px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgb(16, 192, 163);
+	color: white;
+	z-index: 9;
+	font-size: .4em;
+}
+.song-control-pause{
+	position: absolute;
+	right: 10px;
+	margin-top: 10px;
+	border-radius: 50%;
+	width: 25px;
+	height:25px;
+	transition: .5s;
+	display: flex;
+	z-index: 10;
+	justify-content: center;
+	align-items: center;
+	background: rgb(192, 66, 16);
+	color: white;
+	font-size: .4em;
+}
+.song-control-pause:hover{
+	background: rgb(238, 80, 17);
+	font-size: .5em;
+	transition: .1s;
+	cursor: pointer;
+}
+.song-control-play:hover{
+	cursor: pointer;
+	background:rgb(40, 16, 68);
+	font-size: .5em;
+	transition: .1s;
+}
+.btn:hover{
+	cursor: pointer;
+}
+.contenair::-webkit-scrollbar{
+	width: 2px;
+	border-radius: 10px;
+}
+
+.contenair::-webkit-scrollbar-track{
+	background: transparent;
+	/* width: 4px; */
+}
+.contenair::-webkit-scrollbar-thumb{
+	background: rgba(78, 78, 78, 0.123);
+}
+@media screen and (max-width: 767px) {
+	.contenair{
+		top: 25%;
+	}
+	.title{
+		top: 7%;
+		left: 50%;
+		transform: translate(-50%);
+	}
+}
+@media screen and (min-width : 767px) and (max-width : 1023px) {
+	.contenair{
+		top: 25%;
+		width: 350px;
+		left: 50%;
+		transform: translate(-50%);
+	}
+	.title{
+		left: 50%;
+		transform: translate(-50%);
+	}
+}
+@media screen and (min-width:1024px) {
+	.contenair{
+		top: 25%;
+		left: 50%;
+		transform: translate(-50%);
+		width: 450px;
+	}
+	.title{
+		left: 50%;
+		transform: translate(-50%);
+	}
+}
+
+ #audioRange{
+	appearance: none;
+	-webkit-appearance:none;
+	height: 10px;
+	outline: none;
+	background: red;
+}
+
+#audioRage::-webkit-slider-thumb{
+	-webkit-appearance: none;
+	appearance: none;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	background: rgb(115, 255, 0);
+}
+#audioRage::-o-range-thumb{
+	-webkit-appearance: none;
+	appearance: none;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	background: rgb(115, 255, 0);
+}
